@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "otenify",
     "name": "otenify",
     "slug": "otenify",
     "version": "1.0.0",
