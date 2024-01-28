@@ -1,5 +1,6 @@
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useState } from 'react';
+import Brand from '../components/Brand';
 
 export default function App() {
   const [email, setEmail] = useState('');
@@ -12,6 +13,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Brand />
+      <Text style={styles.header}>Login to your account</Text>
       <View style={styles.inputGroup}>
         <Text style={styles.label}>Email: </Text>
         <TextInput
@@ -41,6 +44,10 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     gap: 20,
     paddingHorizontal: 40,
+  },
+  header: {
+    fontSize: 20,
+    textAlign: 'center'
   },
   inputGroup: {
     gap: 5
