@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Brand from './components/Brand';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hello OTEN!</Text>
+      <Brand />
       <StatusBar style="auto" />
     </View>
   );
@@ -12,9 +13,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#ddd',
     alignItems: 'center',
+    backgroundColor: '#fff',
+    flex: 1,
     justifyContent: 'center',
-  },
+  }
 });
