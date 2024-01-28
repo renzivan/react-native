@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { useState } from 'react';
-import { Brand, Button } from '../components';
+import { Brand, Button, Header } from '../components';
 
 export default function App() {
   const [email, setEmail] = useState('');
@@ -16,7 +16,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Brand />
-      <Text style={styles.header}>Create a new account</Text>
+      <Header text="Create a new account" />
       <View style={styles.inputGroup}>
         <Text style={styles.label}>Name: </Text>
         <TextInput

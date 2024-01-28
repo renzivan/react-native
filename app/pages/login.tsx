@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { useState } from 'react';
-import { Brand, Button } from '../components';
+import { Brand, Button, Header } from '../components';
 
 export default function App() {
   const [email, setEmail] = useState('');
@@ -14,7 +14,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Brand />
-      <Text style={styles.header}>Login to your account</Text>
+      <Header text="Login to your account" />
       <View style={styles.inputGroup}>
         <Text style={styles.label}>Email: </Text>
         <TextInput

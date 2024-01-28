@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Brand, Button } from './components'
+import { StyleSheet, View } from 'react-native';
+import { Brand, Button, Header } from './components'
 import { router } from 'expo-router';
 
 export default function App() {
@@ -10,7 +10,10 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Brand />
+      <View>
+        <Header text="Welcome to" />
+        <Brand />
+      </View>
       <View style={styles.buttons}>
         <Button customStyle={{ flex: 1 }} text="Login" onPress={() => handleClick('login')} />
         <Button customStyle={{ flex: 1 }} bgColor="#198754" text="Signup" onPress={() => handleClick('signup')} />
