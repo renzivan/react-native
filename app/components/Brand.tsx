@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     color: '#2196f3',
     fontSize: 30,
     fontWeight: '500',
+    textAlign: 'center'
   },
   coloredLetter: {
     color: '#333',
