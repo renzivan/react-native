@@ -1,14 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import LoginPage from './pages/login';
-import Brand from './components/Brand';
+import { Brand, Button } from './components'
+import { router } from 'expo-router';
 
 export default function App() {
+  const handleClick = (val: string) => {
+    router.push(`/pages/${val}`)
+  }
+
   return (
     <View style={styles.container}>
       <Brand />
-      <LoginPage />
-      <Text onPress={() => {console.log('signup')}}>Signup here!</Text>
+      <View style={styles.buttons}>
+        <Button customStyle={{ flex: 1 }} text="Login" onPress={() => handleClick('login')} />
+        <Button customStyle={{ flex: 1 }} bgColor="#198754" text="Signup" onPress={() => handleClick('signup')} />
+      </View>
       <StatusBar style="auto" />
     </View>
   );
@@ -19,6 +25,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
     flex: 1,
+    gap: 20,
     justifyContent: 'center',
+    paddingHorizontal: 40,
+  },
+  buttons: {
+    flexDirection: 'row',
+    gap: 10
   }
 });

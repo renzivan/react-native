@@ -1,13 +1,13 @@
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { useState } from 'react';
-import Brand from '../components/Brand';
+import { Brand, Button } from '../components';
 
 export default function App() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleClickLogin = () => {
+  const handleClickSignup = () => {
     console.log('name: ', name);
     console.log('email: ', email);
     console.log('password: ', password);
@@ -16,7 +16,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Brand />
-      <Text style={styles.header}>Create an account</Text>
+      <Text style={styles.header}>Create a new account</Text>
       <View style={styles.inputGroup}>
         <Text style={styles.label}>Name: </Text>
         <TextInput
@@ -42,9 +42,7 @@ export default function App() {
           onChangeText={(val) => setPassword(val)}
         />
       </View>
-      <Pressable style={styles.button} onPress={handleClickLogin}>
-        <Text style={styles.buttonText}>Signup</Text>
-      </Pressable>
+      <Button bgColor="#198754" text="Signup" onPress={handleClickSignup} />
     </View>
   );
 }
@@ -74,16 +72,5 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     height: 40,
     paddingHorizontal: 10
-  },
-  button: {
-    alignItems: 'center',
-    alignSelf: 'stretch',
-    backgroundColor: '#2196f3',
-    borderRadius: 100,
-    height: 40,
-    justifyContent: 'center',
-  },
-  buttonText: {
-    color: '#fff',
   }
 });

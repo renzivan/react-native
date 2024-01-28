@@ -1,6 +1,6 @@
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { useState } from 'react';
-import Brand from '../components/Brand';
+import { Brand, Button } from '../components';
 
 export default function App() {
   const [email, setEmail] = useState('');
@@ -32,9 +32,7 @@ export default function App() {
           onChangeText={(val) => setPassword(val)}
         />
       </View>
-      <Pressable style={styles.button} onPress={handleClickLogin}>
-        <Text style={styles.buttonText}>Login</Text>
-      </Pressable>
+      <Button text="Login" onPress={handleClickLogin} />
     </View>
   );
 }
@@ -42,7 +40,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     alignSelf: 'stretch',
+    flex: 1,
     gap: 20,
+    justifyContent: 'center',
     paddingHorizontal: 40,
   },
   header: {
@@ -61,16 +61,5 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     height: 40,
     paddingHorizontal: 10
-  },
-  button: {
-    alignItems: 'center',
-    alignSelf: 'stretch',
-    backgroundColor: '#2196f3',
-    borderRadius: 100,
-    height: 40,
-    justifyContent: 'center',
-  },
-  buttonText: {
-    color: '#fff',
   }
 });
